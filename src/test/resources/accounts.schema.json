@@ -3,6 +3,7 @@
   "type": "array",
   "items": {
     "type": "object",
+    "additionalProperties": false,
     "required": [
       "id",
       "name",
@@ -23,10 +24,15 @@
         "pattern": "^•• \\d{4}$"
       },
       "balance": {
-        "type": "integer"
+        "type": "integer",
+        "default": 0
       },
       "currency": {
-        "currency_type": { "string": ["RUB", "USD"] }
+        "type":"string",
+        "enum": [
+          "RUB",
+          "USD"
+        ]
       }
     }
   }
